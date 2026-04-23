@@ -14,7 +14,7 @@ from tenacity import (
     wait_exponential,
 )
 
-from config import (
+from .config import (
     DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB,
     DEFAULT_HTTP_RETRIES,
     DEFAULT_HTTP_TIMEOUT,

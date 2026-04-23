@@ -11,7 +11,9 @@ dependencies = [
     "fsspec>=2026.3.0",
     "httpx>=0.28.1",
     "lxml>=6.1.0",
+    "lxml-stubs>=0.5.1",
     "pandas>=3.0.2",
+    "pandas-stubs>=3.0.0.260204",
     "requests>=2.33.1",
     "s3fs>=0.4.2",
     "tenacity>=9.1.4",
@@ -44,7 +46,12 @@ target-version = ["py313"]   # same reason
 [tool.mypy]
 python_version = "3.14"
 strict = true
+mypy_path = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["fsspec.*"]
+ignore_missing_imports = true
