@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 
 logger = logging.getLogger(__name__)
 
+
 class BaseStorage(ABC):
     """
     Abstract base class for storage backends.

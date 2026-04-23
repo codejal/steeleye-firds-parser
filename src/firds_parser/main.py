@@ -1,5 +1,6 @@
 """End-to-end pipeline: fetch the FIRDS registry, download the DLTINS zip,
 parse the XML into a CSV, and enrich it with letter-count columns."""
+
 from __future__ import annotations
 
 import logging
@@ -8,18 +9,13 @@ from pathlib import Path
 
 import fsspec
 import pandas as pd
-from .config import (
-        DEFAULT_HTTP_RETRIES, 
-        DEFAULT_HTTP_TIMEOUT,
-        DEFAULT_OUTPUT_PATH, 
-        REGISTRY_URL, 
-        DEFAULT_EXTRACTED_PATH
-)
+
+from .config import (DEFAULT_EXTRACTED_PATH, DEFAULT_HTTP_RETRIES,
+                     DEFAULT_HTTP_TIMEOUT, DEFAULT_OUTPUT_PATH, REGISTRY_URL)
+from .firds_parser import FIRDSParser
 from .http_downloader import HttpDownloader
 from .registry_parser import RegistryParser
 from .utils import extract_zip
-
-from .firds_parser import FIRDSParser
 
 logger = logging.getLogger(__name__)
 

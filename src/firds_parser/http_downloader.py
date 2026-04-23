@@ -7,22 +7,15 @@ from pathlib import Path
 from typing import Self
 
 import httpx
-from tenacity import (
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (retry, retry_if_exception_type, stop_after_attempt,
+                      wait_exponential)
 
-from .config import (
-    DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB,
-    DEFAULT_HTTP_RETRIES,
-    DEFAULT_HTTP_TIMEOUT,
-    DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MULTIPLIER,
-    DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MIN_TIME,
-    DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MAX_TIME,
-    DEFAULT_DOWNLOAD_CHUNK_SIZE_KB,
-)
+from .config import (DEFAULT_DOWNLOAD_CHUNK_SIZE_KB,
+                     DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB,
+                     DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MAX_TIME,
+                     DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MIN_TIME,
+                     DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MULTIPLIER,
+                     DEFAULT_HTTP_RETRIES, DEFAULT_HTTP_TIMEOUT)
 
 logger = logging.getLogger(__name__)
 
@@ -93,11 +86,11 @@ class HttpDownloader:
     def download_to_file(self, url: str, dest: Path) -> Path:
         """Stream a URL's content to a local file and return the destination path.
 
-        Content is written in DEFAULT_DOWNLOAD_CHUNK_SIZE_KB KiB chunks 
-        so that large files are never fully buffered in memory.  
-        Download progress is logged at INFO level every 
-        DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB MiB. 
-        Parent directories are created automatically if they do not exist.  
+        Content is written in DEFAULT_DOWNLOAD_CHUNK_SIZE_KB KiB chunks
+        so that large files are never fully buffered in memory.
+        Download progress is logged at INFO level every
+        DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB MiB.
+        Parent directories are created automatically if they do not exist.
         The request is retried on transient failures according to the
         back-off policy configured in __init__.
 

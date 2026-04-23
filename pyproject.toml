@@ -55,6 +55,9 @@ pythonpath = ["src"]
 python_classes = ["Test*", "Describe*"]
 python_functions = ["test_*", "it_*"]
 
+[tool.pylint.main]
+source-roots = ["src"]
+
 [[tool.mypy.overrides]]
 module = ["fsspec.*"]
 ignore_missing_imports = true

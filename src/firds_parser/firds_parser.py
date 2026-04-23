@@ -1,4 +1,5 @@
 """Stream-parse FIRDS DLTINS XML files and write selected fields to CSV."""
+
 from __future__ import annotations
 
 import csv
