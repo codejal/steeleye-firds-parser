@@ -10,6 +10,7 @@ dependencies = [
     "defusedxml>=0.7.1",
     "fsspec>=2026.3.0",
     "httpx>=0.28.1",
+    "isort>=8.0.1",
     "lxml>=6.1.0",
     "lxml-stubs>=0.5.1",
     "pandas>=3.0.2",
