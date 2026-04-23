@@ -36,7 +36,7 @@ uv sync --all-groups
 DEFAULT_OUTPUT_PATH = "/tmp/firds_output.csv"
 
 # 3. Run
-uv run python src/firds_parser/main.py
+uv run python -m src.firds_parser.main
 ```
 
 **Run tests, linting, and type checks:**
