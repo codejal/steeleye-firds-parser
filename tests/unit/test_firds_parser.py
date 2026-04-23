@@ -1,4 +1,5 @@
 """Unit tests for FIRDSParser.to_csv."""
+
 # pylint: disable=missing-function-docstring,missing-class-docstring,redefined-outer-name
 
 import csv
@@ -18,6 +19,7 @@ CSV_HEADERS = [
     "FinInstrmGnlAttrbts.NtnlCcy",
     "Issr",
 ]
+
 
 def _make_xml(records: list[dict[str, str]]) -> str:
     def record(fields: dict[str, str]) -> str:
