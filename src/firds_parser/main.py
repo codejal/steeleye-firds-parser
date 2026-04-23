@@ -8,8 +8,13 @@ from pathlib import Path
 
 import fsspec
 import pandas as pd
-from .config import (DEFAULT_HTTP_RETRIES, DEFAULT_HTTP_TIMEOUT,
-                    DEFAULT_OUTPUT_PATH, REGISTRY_URL)
+from .config import (
+        DEFAULT_HTTP_RETRIES, 
+        DEFAULT_HTTP_TIMEOUT,
+        DEFAULT_OUTPUT_PATH, 
+        REGISTRY_URL, 
+        DEFAULT_EXTRACTED_PATH
+)
 from .http_downloader import HttpDownloader
 from .registry_parser import RegistryParser
 from .utils import extract_zip
@@ -69,7 +74,7 @@ class Pipeline:
                 zip_path = downloader.download_to_file(download_link, tmp_dir / "dltins.zip")
             logger.info("Downloaded zip to %s", zip_path)
 
-            xml_files = extract_zip(zip_path, tmp_dir / "extracted")
+            xml_files = extract_zip(zip_path, Path(DEFAULT_EXTRACTED_PATH))
             logger.debug("Extracted %d file(s) from zip", len(xml_files))
             total_rows = 0
             for xml_file in xml_files:

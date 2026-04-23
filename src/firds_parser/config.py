@@ -15,4 +15,9 @@ DEFAULT_HTTP_EXPONENTIAL_BACKOFF_MAX_TIME = 10
 DEFAULT_DOWNLOAD_PROGRESS_LOG_INTERVAL_MB = 20
 DEFAULT_DOWNLOAD_CHUNK_SIZE_KB = 64
 
-DEFAULT_OUTPUT_PATH = "<your local path>"
+# Example
+# DEFAULT_OUTPUT_PATH = "steeleye-firds-parser/data/output/output.csv"
+# DEFAULT_EXTRACTED_PATH = "steeleye-firds-parser/data/extracted/"
+
+DEFAULT_OUTPUT_PATH = "<replace>"
+DEFAULT_EXTRACTED_PATH = "<replace>"

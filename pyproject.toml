@@ -52,6 +52,8 @@ mypy_path = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+python_classes = ["Test*", "Describe*"]
+python_functions = ["test_*", "it_*"]
 
 [[tool.mypy.overrides]]
 module = ["fsspec.*"]
