@@ -9,7 +9,7 @@ FIRDS (Financial Instruments Reference Data System) is the ESMA database of all
 financial instruments traded in the EU. Every trading day, ESMA publishes a
 "DLTINS" (Delta Instruments) XML file listing new, updated, and terminated
 instruments. This pipeline automates downloading and processing that file.
-
+TO deeper understand the data reference official doc by ESMA: https://www.esma.europa.eu/sites/default/files/library/esma65-8-5014_firds_-_instructions_for_download_of_full_and_delta_reference_files.pdf
 ---
 
 ## Table of Contents
